@@ -1,11 +1,23 @@
+// pipeline {
+//     agent any
+//     stages {
+//         stage('Build'){
+//             steps {
+//                 sh '''
+//                 echo 'Install Terraform'
+//                 '''
+//             }
+//         }
+//     }
+// }
 pipeline {
-    agent any
+    agent {
+        docker { image 'node:19.6.0' }
+    }
     stages {
-        stage('Build'){
+        stage('Test') {
             steps {
-                sh '''
-                echo 'Install Terraform'
-                '''
+                sh 'node --version'
             }
         }
     }
