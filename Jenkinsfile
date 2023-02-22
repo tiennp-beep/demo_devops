@@ -1,24 +1,24 @@
-// pipeline {
-//     agent any
-//     stages {
-//         stage('Build'){
-//             steps {
-//                 sh '''
-//                 echo 'Install Terraform'
-//                 '''
-//             }
-//         }
-//     }
-// }
 pipeline {
-    agent {
-        docker { image 'nginx' }
-    }
+    agent any
     stages {
-        stage('Test') {
+        stage('Build'){
             steps {
-                sh 'cat /usr/share/nginx/www/index.html'
+                sh '''
+                echo 'Test Jenkin'
+                '''
             }
         }
     }
 }
+// pipeline {
+//     agent {
+//         docker { image 'nginx' }
+//     }
+//     stages {
+//         stage('Test') {
+//             steps {
+//                 sh 'cat /usr/share/nginx/www/index.html'
+//             }
+//         }
+//     }
+// }
