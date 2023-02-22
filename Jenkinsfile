@@ -12,12 +12,12 @@
 // }
 pipeline {
     agent {
-        docker { image 'node:16.19.0' }
+        docker { image 'nginx' }
     }
     stages {
         stage('Test') {
             steps {
-                sh 'node --version'
+                sh 'cat /usr/share/nginx/www/index.html'
             }
         }
     }
